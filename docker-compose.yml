@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app:
+    restart: always
+    build:
+      context: .
+    tty: true
+    volumes:
+      - ./:/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+  db:
+    restart: always
+    image: postgres:11
+    environment:
+      POSTGRES_USER: deploy
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    volumes:
+      - ./tmp/db/data:/var/lib/postgresql/data:z
