@@ -23,3 +23,12 @@ logs:
 
 run:
 	$(DC_APP) go run main.go
+
+migrate:
+	go run db/migrate.go
+
+migrate_up:
+	go run db/migrate.go up
+
+migrate_down:
+	go run db/migrate.go down
