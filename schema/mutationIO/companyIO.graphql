@@ -1,0 +1,28 @@
+# CreateCompany
+input CreateCompanyInput {
+    name: String!
+    phone: Int!
+    domainName: String
+}
+type CreateCompanyPayload {
+    company: Company
+}
+
+# UpdateCompany
+input UpdateCompanyInput {
+    companyId: ID!
+    name: String
+    phone: Int
+    domainName: String
+}
+type UpdateCompanyPayload {
+    company: Company
+}
+
+# DeleteCompany
+input DeleteCompanyInput {
+    companyId: ID!
+}
+type DeleteCompanyPayload {
+    company: Company
+}

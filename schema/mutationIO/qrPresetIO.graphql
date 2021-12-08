@@ -1,0 +1,178 @@
+# createQRPreset
+input CreateQRPresetInput {
+    companyId: ID!
+    type: PresetType!
+    "背景画像"
+    bgFile: String
+    "マスク画像"
+    maskFile: String
+    "エッジ画像"
+    edgeFile: String
+    "シンボル位置"
+    symbolType: SymbolType!
+    "ポジセル色"
+    posiRgb: String
+    "セルの形"
+    cellType: CellType!
+    "QRコードVersion"
+    qrVersion: Int
+    "カラーモード"
+    colorMode: ColorMode!
+    "出力ファイルフォーマット"
+    imageFormat: ImageFormat!
+    "解像度（背景画像と同じ解像度）"
+    outputSpeed: Int
+    "解像度（dpi指定）"
+    dpi: Int
+    "解像度（mm指定）"
+    mmSize: Int
+    "レポート出力"
+    report: Boolean!
+    "複製検知モード"
+    showCopyProtectMode: Boolean!
+    "マスクモード"
+    maskMode: MaskMode!
+    "余白セル数"
+    qrMargin: Int
+    "ガンマ値"
+    ganma: Float
+    "光源値"
+    dValue: DValue!
+    "基準L値から明側許容値"
+    permrangeLight: Int
+    "基準L値から暗側許容値"
+    permrangeDark: Int
+    "ロゴ内ポジL値下限"
+    posiThreshold: Int
+    "背景画像反転L値下限"
+    basePosiThreshold: Int
+    "複写検知時グレイ部ポジL値下限"
+    grayThreshold: Int
+    "ベース部セルの直径の割合"
+    baseRadius: Float
+    "ロゴ部セルの直径の割合"
+    logoRadius: Float
+    "ポジ部セルの直径の割合"
+    posiRadius: Float
+    "複写検知時グレイ部セルの直径の割合"
+    grayRadius: Float
+    "jpgの画質"
+    imageQuality: Int
+    "秘匿コードの処理モード"
+    secretMode: SecretMode!
+    "複写検知時グレイ部色"
+    grayColor: String
+    "複写検知時グラデーション開始色"
+    gradient1Color: String
+    "複写検知時グラデーション中間色"
+    gradient2Color: String
+    "複写検知時グラデーション終了色"
+    gradient3Color: String
+    "複写検知時グラデーション中間色位置"
+    gradientMiddlePoz: Float
+    "CMYK変換時のプロファイルの有無"
+    isCmykProfile: Boolean!
+    "CMYK変換時のプロファイルデータ"
+    cmykProfileData: String
+}
+type CreateQRPresetPayload {
+    qrPreset: QRPreset
+}
+
+# UpdateQRPreset
+input UpdateQRPresetInput {
+    qrPresetId: ID!
+    isActive: Boolean
+    bgFile: String
+    "背景画像"
+    bgFile: String
+    "マスク画像"
+    maskFile: String
+    "エッジ画像"
+    edgeFile: String
+    "シンボル位置"
+    symbolType: SymbolType
+    "ポジセル色"
+    posiRgb: String
+    "セルの形"
+    cellType: CellType
+    "QRコードVersion"
+    qrVersion: Int
+    "カラーモード"
+    colorMode: ColorMode
+    "出力ファイルフォーマット"
+    imageFormat: ImageFormat
+    "解像度（背景画像と同じ解像度）"
+    outputSpeed: Int
+    "解像度（dpi指定）"
+    dpi: Int
+    "解像度（mm指定）"
+    mmSize: Int
+    "レポート出力"
+    report: Boolean
+    "複製検知モード"
+    showCopyProtectMode: Boolean
+    "マスクモード"
+    maskMode: MaskMode
+    "余白セル数"
+    qrMargin: Int
+    "ガンマ値"
+    ganma: Float
+    "光源値"
+    dValue: DValue
+    "基準L値から明側許容値"
+    permrangeLight: Int
+    "基準L値から暗側許容値"
+    permrangeDark: Int
+    "ロゴ内ポジL値下限"
+    posiThreshold: Int
+    "背景画像反転L値下限"
+    basePosiThreshold: Int
+    "複写検知時グレイ部ポジL値下限"
+    grayThreshold: Int
+    "ベース部セルの直径の割合"
+    baseRadius: Float
+    "ロゴ部セルの直径の割合"
+    logoRadius: Float
+    "ポジ部セルの直径の割合"
+    posiRadius: Float
+    "複写検知時グレイ部セルの直径の割合"
+    grayRadius: Float
+    "jpgの画質"
+    imageQuality: Int
+    "秘匿コードの処理モード"
+    secretMode: SecretMode
+    "複写検知時グレイ部色"
+    grayColor: String
+    "複写検知時グラデーション開始色"
+    gradient1Color: String
+    "複写検知時グラデーション中間色"
+    gradient2Color: String
+    "複写検知時グラデーション終了色"
+    gradient3Color: String
+    "複写検知時グラデーション中間色位置"
+    gradientMiddlePoz: Float
+    "CMYK変換時のプロファイルの有無"
+    isCmykProfile: Boolean
+    "CMYK変換時のプロファイルデータ"
+    cmykProfileData: String
+}
+type UpdateQRPresetPayload {
+    qrPreset: QRPreset
+}
+
+# DeleteQRPreset
+input DeleteQRPresetInput {
+    qrPresetId: ID!
+}
+type DeleteQRPresetPayload {
+    qrPreset: QRPreset
+}
+
+# AcceptQRPreset
+input AcceptQRPresetInput {
+    qrPresetId: ID!
+}
+type AcceptQRPresetPayload {
+    qrPreset: QRPreset
+}

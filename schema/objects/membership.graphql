@@ -1,0 +1,26 @@
+"Membership Object"
+type Membership implements Node & Record {
+    id: ID!
+    role: MembershipRole!
+
+    account: Account!
+    company: Company!
+
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
+
+enum MembershipRole {
+    ADMIN
+    GENERAL
+}
+
+type MembershipEdge {
+    cursor: String!
+    node: Membership
+}
+
+type MembershipConnection {
+    pageInfo: PageInfo!
+    edges: [MembershipEdge]
+}

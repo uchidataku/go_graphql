@@ -1,0 +1,23 @@
+"License Object"
+type License implements Node & Record {
+    id: ID!
+    key: String!
+    sinceDate: Date!
+    untilDate: Date!
+    isRevoked: Boolean! # 強制取り消しフラグ
+
+    company: Company!
+
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
+
+type LicenseEdge {
+    cursor: String!
+    node: License
+}
+
+type LicenseConnection {
+    pageInfo: PageInfo!
+    edges: [LicenseEdge]
+}

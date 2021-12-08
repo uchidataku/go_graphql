@@ -1,0 +1,8 @@
+# ApplyPlan
+"運営に申込通知メールを飛ばす"
+input ApplyPlanInput {
+    companyId: ID! # 初期段階はプラン選択なしだが、将来的にはプランを選択させる
+}
+type ApplyPlanPayload {
+    company: Company
+}

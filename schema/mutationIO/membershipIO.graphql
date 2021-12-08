@@ -1,0 +1,24 @@
+# inviteMembership
+input InviteMembershipInput {
+    emails: [String!]
+}
+type InviteMembershipPayload {
+    memberships: MembershipConnection
+}
+
+# UpdateMembership
+input UpdateMembershipInput {
+    membershipId: ID!
+    role: MembershipRole
+}
+type UpdateMembershipPayload {
+    membership: Membership
+}
+
+# DeleteMembership
+input DeleteMembershipInput {
+    membershipId: ID!
+}
+type DeleteMembershipPayload {
+    membership: Membership
+}

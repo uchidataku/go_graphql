@@ -32,3 +32,6 @@ migrate_up:
 
 migrate_down:
 	go run db/migrate.go down
+
+schema:
+	go run schema.go

@@ -1,0 +1,44 @@
+type Query {
+    """
+    Fetches an object given its ID.
+    """
+    node(id: ID!): Node
+
+    "Account"
+    currentAccount: Account!
+    accounts(
+        first: Int
+        after: String
+        last: Int
+        before: String
+        role: AccountRole
+    ): AccountConnection!
+
+    "Company"
+    companies(
+        first: Int
+        after: String
+        last: Int
+        before: String
+        planStatus: PlanStatus
+    ): CompanyConnection!
+
+    "QRCode"
+    qrCodes(
+        first: Int
+        after: String
+        last: Int
+        before: String
+    ): QRCodeConnection!
+
+    "QRPreset"
+    qrPresets(
+        first: Int
+        after: String
+        last: Int
+        before: String
+        type: PresetType
+        isActive: Boolean
+    ): QRPresetConnection!
+}
+

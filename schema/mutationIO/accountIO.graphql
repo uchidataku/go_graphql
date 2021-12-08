@@ -1,0 +1,42 @@
+#SignUpAccount
+input SignUpAccountInput {
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+}
+
+type SignUpAccountPayload {
+    account: Account
+}
+
+#SignInAccount
+input SignInAccountInput {
+    email: String!
+    password: String!
+}
+
+type SignInAccountPayload {
+    account: Account
+}
+
+# UpdateAccount
+input UpdateAccountInput {
+    accountId: ID!
+    firstName: String
+    lastName: String
+    newEmail: String
+    password: String
+    newPassword: String
+}
+type UpdateAccountPayload {
+    account: Account
+}
+
+# DeleteAccount
+input DeleteAccountInput {
+    accountId: ID!
+}
+type DeleteAccountPayload {
+    account: Account
+}

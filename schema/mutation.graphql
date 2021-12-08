@@ -1,0 +1,34 @@
+type Mutation {
+    # Token
+    verifyToken(input: VerifyTokenInput!): VerifyTokenPayload
+
+    # Account
+    tempRegister(input: TempRegisterInput!): TempRegisterPayload
+    signUpAccount(input: SignUpAccountInput!): SignUpAccountPayload
+    signInAccount(input: SignInAccountInput!): SignInAccountPayload
+    updateAccount(input: UpdateAccountInput!): UpdateAccountPayload
+    deleteAccount(input: DeleteAccountInput!): DeleteAccountPayload
+
+    # Plan
+    applyPlan(input: ApplyPlanInput!): ApplyPlanPayload
+
+    # Company
+    createCompany(input: CreateCompanyInput!): CreateCompanyPayload
+    updateCompany(input: UpdateCompanyInput!): UpdateCompanyPayload
+    deleteCompany(input: DeleteCompanyInput!): DeleteCompanyPayload
+
+    # License
+    createLicense(input: CreateLicenseInput!): CreateLicensePayload
+    revokeLicense(input: RevokeLicenseInput!): RevokeLicensePayload
+
+    # Membership
+    inviteMembership(input: InviteMembershipInput!): InviteMembershipPayload
+    updateMembership(input: UpdateMembershipInput!): UpdateMembershipPayload
+    deleteMembership(input: DeleteMembershipInput!): DeleteMembershipPayload
+
+    # QRPreset
+    createQRPreset(input: CreateQRPresetInput!): CreateQRPresetPayload
+    updateQRPreset(input: UpdateQRPresetInput!): UpdateQRPresetPayload
+    deleteQRPreset(input: DeleteQRPresetInput!): DeleteQRPresetPayload
+}
+

@@ -1,0 +1,18 @@
+"Token Object"
+type Token implements Node & Record {
+    id: ID!
+    email: String!
+
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
+
+type TokenEdge {
+    cursor: String!
+    node: Token
+}
+
+type TokenConnection {
+    pageInfo: PageInfo!
+    edges: [TokenEdge]
+}

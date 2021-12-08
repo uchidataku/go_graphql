@@ -1,0 +1,40 @@
+"Company Object"
+type Company implements Node & Record {
+    id: ID!
+    name: String!
+    phone: Int!
+    "オーナーのアドレスのドメインから抜粋、そのドメインを使用しているアカウントはMembershipが自動生成される"
+    domainName: String
+
+    licenses(
+        first: Int
+        after: String
+        last: Int
+        before: String
+    ): LicenseConnection!
+    memberships(
+        first: Int
+        after: String
+        last: Int
+        before: String
+    ): MembershipConnection!
+
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
+
+enum PlanStatus {
+    VALID # ライセンスキー発行済み・有効期限内
+    INVALID # ライセンスキー発行済み・有効期限外
+    APPLYING # ライセンスキー発行待ち
+}
+
+type CompanyEdge {
+    cursor: String!
+    node: Company
+}
+
+type CompanyConnection {
+    pageInfo: PageInfo!
+    edges: [CompanyEdge]
+}

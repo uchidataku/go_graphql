@@ -1,0 +1,4 @@
+"Node interface for Realy specification"
+interface Node {
+    id: ID!
+}

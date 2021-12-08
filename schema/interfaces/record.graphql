@@ -1,0 +1,5 @@
+"Record provides createdAt, updatedAt"
+interface Record {
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}

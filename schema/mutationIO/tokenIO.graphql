@@ -1,0 +1,17 @@
+#TempRegister
+input TempRegisterInput {
+    email: String!
+}
+
+type TempRegisterPayload {
+    token: Token # 本登録用メールを送信する
+}
+
+# VerifyToken
+input VerifyTokenInput {
+    token: ID!
+}
+
+type VerifyTokenPayload {
+    email: String # フロントで保持してSignUpAccountのmutationでもらう
+}

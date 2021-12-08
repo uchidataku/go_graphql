@@ -1,0 +1,15 @@
+# CreateLicense
+input CreateLicenseInput {
+    companyId: ID!
+}
+type CreateLicensePayload {
+    license: License
+}
+
+# RevokeLicense
+input RevokeLicenseInput {
+    licenseId: ID!
+}
+type RevokeLicensePayload {
+    license: License
+}

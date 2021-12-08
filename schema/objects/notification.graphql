@@ -1,0 +1,20 @@
+"Notification Object"
+type Notification implements Node & Record {
+    id: ID!
+    content: String!
+
+    account: Account
+
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
+
+type NotificationEdge {
+    cursor: String!
+    node: Notification
+}
+
+type NotificationConnection {
+    pageInfo: PageInfo!
+    edges: [NotificationEdge]
+}
