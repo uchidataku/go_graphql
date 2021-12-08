@@ -11,8 +11,43 @@ import (
 
 type RootResolver struct{}
 
-func (r *RootResolver) Info() (string, error) {
-	return "this is a thing", nil
+type Account struct {
+	ID        graphql.ID
+	FirstName string
+	LastName  string
+	Email     string
+}
+
+var (
+	opts     = []graphql.SchemaOpt{graphql.UseFieldResolvers()}
+	accounts = []Account{
+		{
+			ID:        "12345",
+			FirstName: "fuga",
+			LastName:  "hoge",
+			Email:     "sample@example.com",
+		},
+	}
+)
+
+func (r *RootResolver) Accounts() ([]Account, error) {
+	return accounts, nil
+}
+
+func (r *RootResolver) CreateAccount(args struct {
+	FirstName string
+	LastName  string
+	Email     string
+}) (Account, error) {
+	newAccount := Account{
+		ID:        graphql.ID(fmt.Sprint(len(accounts)) + "-account"),
+		FirstName: args.FirstName,
+		LastName:  args.LastName,
+		Email:     args.Email,
+	}
+
+	accounts = append(accounts, newAccount)
+	return newAccount, nil
 }
 
 // Reads and parses the schema from file.
@@ -26,6 +61,7 @@ func parseSchema(path string, resolver interface{}) *graphql.Schema {
 	parsedSchema, err := graphql.ParseSchema(
 		schemaString,
 		resolver,
+		opts...,
 	)
 	if err != nil {
 		panic(err)
